@@ -1,3 +1,3 @@
 # Biostats.Midterm
 
-#Work-in-progress file sharing and keeping track of file versions can be done here
+#Files for ths Biostats Midterm can be found in this GitHub repository
