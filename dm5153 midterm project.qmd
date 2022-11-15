@@ -473,7 +473,7 @@ Top 5 genes in full set are: ML20395a, ML26358a, ML46651a, ML020045a, and ML0001
 
 ## 
 
-Question 3
+## Question 3
 
 ```{r}
 #Calculate mean and standard deviation for each column
@@ -606,7 +606,9 @@ The problem with computing row-wise correlations for every gene is that the outp
 
 First, we calculated the PCA value for each row, forcing the number of principal components to 1. This should provide an approximation of similarity, so that rows likely to have high correlations have similar PCA values. By sorting by this value we place rows likely to be highly correlated near each other in the data frame. After this, we test the correlation of each row versus the five following rows and record the correlation. This sorting after dimensionality reduction is performed to reduce the computational load for calculating n\^2 correlations. The method is not perfect, and may omit some highly correlated pairs, but should provide decent coverage of highly correlated genes.
 
-The histogram below shows the distribution of correlations, which does skew towards higher correlations, though maybe not as strongly as we would have liked.
+The histogram below shows the distribution of correlations, which does skew towards higher correlations, though maybe not as strongly as we would have liked. Increasing the number of PC parameters may improve this model.
+
+The genes with high correlation have very similar expression patterns across groups.
 
 ```{r}
 library(reshape2)
@@ -652,9 +654,16 @@ for(x in 1:(ncol(mcount_pca_sort_t)-range)){
 #sort by correlation
 row_cors<-row_cors[order(row_cors$value, decreasing = TRUE),]
 #print top 10 pairs of genes with strongest correlation
-head(row_cors,10)
+head(row_cors,5)
 #examine the distribution of the correlations
 hist(row_cors$value)
+```
+
+```{r}
+#check the top pair to see why they are so closely correlated
+mcountdata[which(mcountdata[,"Gene"]=="ML45843a"),]
+mcountdata[which(mcountdata[,"Gene"]=="ML073030a"),]
+
 ```
 
 ## **Question 5.**
@@ -666,10 +675,22 @@ hist(row_cors$value)
 #first plot the data to see the distribution of gene expression
 library(ggplot2)
 ggplot(mcountdata, aes(x=Gene,y= expmean)) +
-  geom_point() 
+  geom_point()
 ```
 
 ## Question 6.
+
+```{r}
+# if (!require("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# 
+# BiocManager::install("DESeq2")
+# 
+# if (!require("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# 
+# BiocManager::install("airway")
+```
 
 ```{r}
 #6) make a list of the top 5 genes with most variability and top 5 genes with least variability (exclude genes that have low expression values)
