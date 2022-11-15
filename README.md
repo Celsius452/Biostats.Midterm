@@ -6,4 +6,5 @@
 
 #In this repository you will find a master RStudio document(and its knitted render), a pdf of question reponses, as well as images for Dataset 1.
 
-#Please consider the master RStudio document the final code submission, and the question response pdf the final question responses. 
+#Please consider 'dm5153-midterm-project.pdf' the final render of the knitted code, 'Biostatistics Midterm Question Responses.pdf' our final responses for the questions asked in the Midterm prompt
+
