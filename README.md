@@ -8,4 +8,4 @@
 
 #Please consider 'dm5153-midterm-project.pdf' the final render of the knitted code, 'Biostatistics Midterm Question Responses.pdf' our final responses for the questions asked in the Midterm prompt, 'dm5153 midterm project.qmd' our source RMarkdown code document, and 'dm5153 midterm project.html' the html document corresponding to the RMarkdown document
 
-
+#Dataset 1 was worked on by Devin and Mudra; Dataset 2 was worked on by Brandon and Jessica
