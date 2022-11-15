@@ -4,6 +4,6 @@
 
 #All files for this Biostats Midterm can be found in this GitHub repository
 
-#In this repository you will find a master RStudio document, a Google Colab document, a pdf of question reponses, as well as images generated.
+#In this repository you will find a master RStudio document, a pdf of question reponses, as well as images for Dataset 1.
 
-#Consider the master RStudio document the final code submission, and the question response pdf the final question responses. 
+#Please consider the master RStudio document the final code submission, and the question response pdf the final question responses. 
